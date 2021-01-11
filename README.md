@@ -1,3 +1,92 @@
+### FRANÇAIS
+
+# Solution de première place pour le défi d'identification du sel Kaggle TGS (p.ex. et phalange)
+
+## Papier décrivant la solution:
+
+** Segmentation semi-supervisée des corps de sel dans des images sismiques à l'aide d'un ensemble de réseaux de neurones convolutifs **
+ *** Conférence allemande sur la reconnaissance de formes (GCPR), 2019 ***
+* Yauhen Babakhin, Artsiom Sanakoyeu, Hirotoshi Kitamura *
+https://arxiv.org/abs/1904.04445
+
+Kaggle post sur la solution: [lien] (https://www.kaggle.com/c/tgs-salt-identification-challenge/discussion/69291).
+
+## ENVIRONNEMENT
+
+La solution est disponible sous forme de conteneur Docker. Les dépendances suivantes doivent être installées:
+
+* Python 3.5.2
+* CUDA 9.0
+* cuddn 7
+* pilotes nvidia v.384
+* [Docker] (https://www.docker.com/)
+* [nvidia-docker] (https://github.com/NVIDIA/nvidia-docker)
+
+## CONFIGURATION DES DONNÉES
+
+Téléchargez et décompressez [données de la compétition] (https://www.kaggle.com/c/tgs-salt-identification-challenge/data) dans le répertoire `data /`.
+On pourrait spécifier le chemin local vers les nouvelles images de test dans le fichier `SETTINGS.json` (champ` NEW_TEST_IMAGES_DATA`). Les données du test de compétition sont utilisées par défaut.
+Le Dossier devrait ressembler a ceci après téléchargement des données:
+![plot](./readmeimage/datafolder.jpg)
+## CONFIGURATION DES POIDS
+
+Pour obtenir les poids des modèles de la phase finale, téléchargez-les depuis [google drive] (https://drive.google.com/file/d/12iXDUhBTC6596MLAC2aiN-GDVqBbGBWh/view?usp=sharing) et décompressez-les dans le fichier `bes / weights / correspondant Répertoires `et` phalanx / weights`.
+
+## CONFIGURATION DU DOCKER
+
+Pour créer et démarrer une exécution de conteneur Docker:
+```bash
+docker cd
+./build.sh
+./run.sh
+```
+
+## CONSTRUCTION DE MODÈLE
+
+1. Former des modèles à partir de zéro
+
+    a) Entraîne tous les modèles à partir de zéro
+
+    b) Attendez-vous à ce que cela dure environ 16 jours sur une seule GTX1080Ti
+    
+2. Faire des prédictions
+
+    a) Utilise les poids des modèles d'étape finale pour faire des prédictions
+
+    b) Attendez-vous à ce que cela dure 3,5 heures pour 18000 images de test sur une seule GTX1080Ti
+
+Les commandes pour exécuter chaque build sont présentées ci-dessous:
+
+### 1. modèles de train (crée des poids de modèle en bes / poids et phalange / poids)
+```bash
+./train.sh
+```
+
+### 2. faire une prédiction (crée des prédictions / test_prediction.csv)
+```bash
+./predict.sh
+```
+
+## NOTES COMPLÉMENTAIRES
+
+1. Les poids du modèle sont enregistrés dans bes / poids et phalange / poids pour b.e.s. et modèles de phalange respectivement
+
+2. Les prédictions des modèles individuels avant l'assemblage sont stockées dans bes / predictions (beaucoup d'images .png) et phalange / predictions (fichiers .npy)
+
+3. Les scripts pour générer les plis initiaux et les mosaïques de puzzle se trouvent dans bes / datasets: generate_folds.py et Generate_Mosaic.R
+
+## CITATION
+Si vous trouvez ce code utile, veuillez citer notre article:
+
+```
+@journal{tgsSaltBodiesSegmentation2019,
+  title={Semi-Supervised Segmentation of Salt Bodies in Seismic Images using an Ensemble of Convolutional Neural Networks},
+  author={Babakhin, Yauhen, and Sanakoyeu, Artsiom, and Kitamura, Hirotoshi},
+  journal={German Conference on Pattern Recognition (GCPR)},
+  year={2019}
+}
+```
+
 # 1st Place Solution for the Kaggle TGS Salt Identification Challenge (b.e.s. & phalanx)
 
 ## Paper describing the solution: 
