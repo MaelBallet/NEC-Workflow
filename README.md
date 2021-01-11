@@ -24,8 +24,8 @@ La solution est disponible sous forme de conteneur Docker. Les dépendances suiv
 
 ## CONFIGURATION DES DONNÉES
 
-Téléchargez et décompressez [competition data](https://www.kaggle.com/c/tgs-salt-identification-challenge/data) dans le répertoire `data /`.
-On pourrait spécifier le chemin local vers les nouvelles images de test dans le fichier `SETTINGS.json` (champ` NEW_TEST_IMAGES_DATA`). Les données du test de compétition sont utilisées par défaut.
+Téléchargez et décompressez [competition data](https://www.kaggle.com/c/tgs-salt-identification-challenge/data) dans le répertoire `data/`.
+On pourrait spécifier le chemin local vers les nouvelles images de test dans le fichier `SETTINGS.json` (champ `NEW_TEST_IMAGES_DATA`). Les données du test de compétition sont utilisées par défaut.
 
 Le Dossier devrait ressembler a ceci après téléchargement des données:
 ![plot](/readmeimage/datafolder.JPG)
