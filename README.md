@@ -9,7 +9,7 @@
 *Yauhen Babakhin, Artsiom Sanakoyeu, Hirotoshi Kitamura*
 https://arxiv.org/abs/1904.04445
 
-Kaggle post sur la solution: [lien] (https://www.kaggle.com/c/tgs-salt-identification-challenge/discussion/69291).
+Kaggle post sur la solution: [link](https://www.kaggle.com/c/tgs-salt-identification-challenge/discussion/69291).
 
 ## ENVIRONNEMENT
 
@@ -24,13 +24,13 @@ La solution est disponible sous forme de conteneur Docker. Les dépendances suiv
 
 ## CONFIGURATION DES DONNÉES
 
-Téléchargez et décompressez [données de la compétition] (https://www.kaggle.com/c/tgs-salt-identification-challenge/data) dans le répertoire `data /`.
+Téléchargez et décompressez [competition data](https://www.kaggle.com/c/tgs-salt-identification-challenge/data) dans le répertoire `data /`.
 On pourrait spécifier le chemin local vers les nouvelles images de test dans le fichier `SETTINGS.json` (champ` NEW_TEST_IMAGES_DATA`). Les données du test de compétition sont utilisées par défaut.
 Le Dossier devrait ressembler a ceci après téléchargement des données:
 ![plot](./readmeimage/datafolder.jpg)
 ## CONFIGURATION DES POIDS
 
-Pour obtenir les poids des modèles de la phase finale, téléchargez-les depuis [google drive] (https://drive.google.com/file/d/12iXDUhBTC6596MLAC2aiN-GDVqBbGBWh/view?usp=sharing) et décompressez-les dans le fichier `bes / weights / correspondant Répertoires `et` phalanx / weights`.
+Pour obtenir les poids des modèles de la phase finale, téléchargez-les depuis [google drive](https://drive.google.com/file/d/12iXDUhBTC6596MLAC2aiN-GDVqBbGBWh/view?usp=sharing) et décompressez-les dans le fichier `bes / weights / correspondant Répertoires `et` phalanx / weights`.
 
 ## CONFIGURATION DU DOCKER
 
