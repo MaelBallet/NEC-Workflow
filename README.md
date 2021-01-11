@@ -1,6 +1,6 @@
 ### FRANÇAIS
 
-# Solution de première place pour le défi d'identification du sel Kaggle TGS (p.ex. et phalange)
+# Solution de première place pour le défi d'identification du sel Kaggle TGS (p.ex. et phalanx)
 
 ## Papier décrivant la solution:
 
@@ -59,7 +59,7 @@ docker cd
 
 Les commandes pour exécuter chaque build sont présentées ci-dessous:
 
-### 1. modèles de train (crée des poids de modèle en bes / poids et phalange / poids)
+### 1. modèles de train (crée des poids de modèle en bes/poids et phalanx/poids)
 ```bash
 ./train.sh
 ```
@@ -71,9 +71,9 @@ Les commandes pour exécuter chaque build sont présentées ci-dessous:
 
 ## NOTES COMPLÉMENTAIRES
 
-1. Les poids du modèle sont enregistrés dans bes / poids et phalange / poids pour b.e.s. et modèles de phalange respectivement
+1. Les poids du modèle sont enregistrés dans bes/poids et phalanx/poids pour b.e.s. et modèles de phalanx respectivement
 
-2. Les prédictions des modèles individuels avant l'assemblage sont stockées dans bes / predictions (beaucoup d'images .png) et phalange / predictions (fichiers .npy)
+2. Les prédictions des modèles individuels avant l'assemblage sont stockées dans bes/predictions (beaucoup d'images .png) et phalanx/predictions (fichiers .npy)
 
 3. Les scripts pour générer les plis initiaux et les mosaïques de puzzle se trouvent dans bes / datasets: generate_folds.py et Generate_Mosaic.R
 
