@@ -1,6 +1,6 @@
 ### FRANÇAIS
 
-# Solution de première place pour le défi d'identification du sel Kaggle TGS (p.ex. et phalanx)
+# Solution de première place pour le défi d'identification du sel Kaggle TGS (b.e.s. et phalanx)
 
 ## Papier décrivant la solution:
 
