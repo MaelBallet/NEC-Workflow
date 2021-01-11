@@ -4,9 +4,9 @@
 
 ## Papier décrivant la solution:
 
-** Segmentation semi-supervisée des corps de sel dans des images sismiques à l'aide d'un ensemble de réseaux de neurones convolutifs **
- *** Conférence allemande sur la reconnaissance de formes (GCPR), 2019 ***
-* Yauhen Babakhin, Artsiom Sanakoyeu, Hirotoshi Kitamura *
+**Segmentation semi-supervisée des corps de sel dans des images sismiques à l'aide d'un ensemble de réseaux de neurones convolutifs**
+ ***Conférence allemande sur la reconnaissance de formes (GCPR), 2019***
+*Yauhen Babakhin, Artsiom Sanakoyeu, Hirotoshi Kitamura*
 https://arxiv.org/abs/1904.04445
 
 Kaggle post sur la solution: [lien] (https://www.kaggle.com/c/tgs-salt-identification-challenge/discussion/69291).
@@ -86,6 +86,8 @@ Si vous trouvez ce code utile, veuillez citer notre article:
   year={2019}
 }
 ```
+
+### ENGLISH
 
 # 1st Place Solution for the Kaggle TGS Salt Identification Challenge (b.e.s. & phalanx)
 
