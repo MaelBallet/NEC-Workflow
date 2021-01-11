@@ -30,7 +30,7 @@ Le Dossier devrait ressembler a ceci après téléchargement des données:
 ![plot](./readmeimage/datafolder.jpg)
 ## CONFIGURATION DES POIDS
 
-Pour obtenir les poids des modèles de la phase finale, téléchargez-les depuis [google drive](https://drive.google.com/file/d/12iXDUhBTC6596MLAC2aiN-GDVqBbGBWh/view?usp=sharing) et décompressez-les dans le fichier `bes / weights / correspondant Répertoires `et` phalanx / weights`.
+Pour obtenir les poids des modèles de la phase finale, téléchargez-les depuis [google drive](https://drive.google.com/file/d/12iXDUhBTC6596MLAC2aiN-GDVqBbGBWh/view?usp=sharing) et décompressez-les dans les répertoires correspondant  `bes/weights/` et `phalanx/weights`.
 
 ## CONFIGURATION DU DOCKER
 
