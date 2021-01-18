@@ -9,8 +9,6 @@
 *Yauhen Babakhin, Artsiom Sanakoyeu, Hirotoshi Kitamura*
 https://arxiv.org/abs/1904.04445
 
-Kaggle post sur la solution: [link](https://www.kaggle.com/c/tgs-salt-identification-challenge/discussion/69291).
-
 ## ENVIRONNEMENT
 
 La solution est disponible sous forme de conteneur Docker. Les dépendances suivantes doivent être installées:
@@ -99,8 +97,6 @@ Si vous trouvez ce code utile, veuillez citer notre article:
  ***German Conference on Pattern Recognition (GCPR), 2019***  
 *Yauhen Babakhin, Artsiom Sanakoyeu, Hirotoshi Kitamura*   
 https://arxiv.org/abs/1904.04445 
-
-Kaggle post about the solution: [link](https://www.kaggle.com/c/tgs-salt-identification-challenge/discussion/69291).
 
 ## ENVIRONMENT
 
