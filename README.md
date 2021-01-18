@@ -86,6 +86,9 @@ Si vous trouvez ce code utile, veuillez citer notre article:
   year={2019}
 }
 ```
+## Implémentation Intéressante
+
+Ici une autre implémentation que vous pouvez regarder qui a fini 60ème du challenge [liuchuanloong implementation](https://github.com/liuchuanloong/kaggle-TGS-salt-identification)
 
 ### ENGLISH
 
@@ -172,3 +175,7 @@ If you find this code useful, please cite our paper:
   year={2019}
 }
 ```
+
+## Interresting Implementation
+
+Here is another implementation that finished 60th in the Challenge [liuchuanloong implementation](https://github.com/liuchuanloong/kaggle-TGS-salt-identification)
