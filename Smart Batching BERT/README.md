@@ -1,3 +1,5 @@
+### Code originally from Chris McCormick
+
 # Introduction
 
 In this Notebook, I'll demonstrate how to dramatically increase BERT's training time by creating batches of samples with different sequence lengths. 
