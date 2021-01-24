@@ -71,51 +71,13 @@ Note: You can view the results of Michael's experiments on "Weights and Biases" 
 
 ## 1.1. Install transformers
 
-
 ```
 !pip install transformers==3.0.2 
-```
-
-    Collecting transformers==3.0.2
-    [?25l  Downloading https://files.pythonhosted.org/packages/27/3c/91ed8f5c4e7ef3227b4119200fc0ed4b4fd965b1f0172021c25701087825/transformers-3.0.2-py3-none-any.whl (769kB)
-    [K     |████████████████████████████████| 778kB 6.0MB/s 
-    [?25hRequirement already satisfied: packaging in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (20.8)
-    Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (4.41.1)
-    Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (1.19.4)
-    Requirement already satisfied: dataclasses; python_version < "3.7" in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (0.8)
-    Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (2019.12.20)
-    Requirement already satisfied: filelock in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (3.0.12)
-    Collecting tokenizers==0.8.1.rc1
-    [?25l  Downloading https://files.pythonhosted.org/packages/40/d0/30d5f8d221a0ed981a186c8eb986ce1c94e3a6e87f994eae9f4aa5250217/tokenizers-0.8.1rc1-cp36-cp36m-manylinux1_x86_64.whl (3.0MB)
-    [K     |████████████████████████████████| 3.0MB 19.1MB/s 
-    [?25hCollecting sentencepiece!=0.1.92
-    [?25l  Downloading https://files.pythonhosted.org/packages/14/67/e42bd1181472c95c8cda79305df848264f2a7f62740995a46945d9797b67/sentencepiece-0.1.95-cp36-cp36m-manylinux2014_x86_64.whl (1.2MB)
-    [K     |████████████████████████████████| 1.2MB 39.9MB/s 
-    [?25hRequirement already satisfied: requests in /usr/local/lib/python3.6/dist-packages (from transformers==3.0.2) (2.23.0)
-    Collecting sacremoses
-    [?25l  Downloading https://files.pythonhosted.org/packages/7d/34/09d19aff26edcc8eb2a01bed8e98f13a1537005d31e95233fd48216eed10/sacremoses-0.0.43.tar.gz (883kB)
-    [K     |████████████████████████████████| 890kB 51.6MB/s 
-    [?25hRequirement already satisfied: pyparsing>=2.0.2 in /usr/local/lib/python3.6/dist-packages (from packaging->transformers==3.0.2) (2.4.7)
-    Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.6/dist-packages (from requests->transformers==3.0.2) (1.24.3)
-    Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.6/dist-packages (from requests->transformers==3.0.2) (3.0.4)
-    Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.6/dist-packages (from requests->transformers==3.0.2) (2.10)
-    Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.6/dist-packages (from requests->transformers==3.0.2) (2020.12.5)
-    Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from sacremoses->transformers==3.0.2) (1.15.0)
-    Requirement already satisfied: click in /usr/local/lib/python3.6/dist-packages (from sacremoses->transformers==3.0.2) (7.1.2)
-    Requirement already satisfied: joblib in /usr/local/lib/python3.6/dist-packages (from sacremoses->transformers==3.0.2) (1.0.0)
-    Building wheels for collected packages: sacremoses
-      Building wheel for sacremoses (setup.py) ... [?25l[?25hdone
-      Created wheel for sacremoses: filename=sacremoses-0.0.43-cp36-none-any.whl size=893261 sha256=85369208add76cbc276827d9b00cbaeed5a97ab9abfafedc61aa65449d4222b3
-      Stored in directory: /root/.cache/pip/wheels/29/3c/fd/7ce5c3f0666dab31a50123635e6fb5e19ceb42ce38d4e58f45
-    Successfully built sacremoses
-    Installing collected packages: tokenizers, sentencepiece, sacremoses, transformers
-    Successfully installed sacremoses-0.0.43 sentencepiece-0.1.95 tokenizers-0.8.1rc1 transformers-3.0.2
-    
+```   
 
 ## 1.2. Helper Functions
 
 In many of my (long-running) for-loops I'll print periodic progress updates. Typically I pick the update interval manually, but for this Notebook I've defined a helper function to make that choice for me :)
-
 
 ```
 def good_update_interval(total_iters, num_desired_updates):
@@ -182,9 +144,6 @@ I'm sure there are many ways to retrieve this dataset--I'm using the TensorFlow 
 
 Documentation is here: https://www.tensorflow.org/datasets/catalog/imdb_reviews
 
-
-
-
 ```
 import tensorflow_datasets as tfds
 
@@ -192,83 +151,7 @@ import tensorflow_datasets as tfds
 train_data = tfds.load(name="imdb_reviews/plain_text", split="train")
 test_data = tfds.load(name="imdb_reviews/plain_text", split="test")
 
-```
-
-    [1mDownloading and preparing dataset imdb_reviews/plain_text/1.0.0 (download: 80.23 MiB, generated: Unknown size, total: 80.23 MiB) to /root/tensorflow_datasets/imdb_reviews/plain_text/1.0.0...[0m
-    
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', description='Dl Completed...', max=1.0, style=Progre…
-
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', description='Dl Size...', max=1.0, style=ProgressSty…
-
-
-    
-    
-    
-    
-    
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Shuffling and writing examples to /root/tensorflow_datasets/imdb_reviews/plain_text/1.0.0.incompleteY3WF96/imdb_reviews-train.tfrecord
-    
-
-
-    HBox(children=(FloatProgress(value=0.0, max=25000.0), HTML(value='')))
-
-
-    
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Shuffling and writing examples to /root/tensorflow_datasets/imdb_reviews/plain_text/1.0.0.incompleteY3WF96/imdb_reviews-test.tfrecord
-    
-
-
-    HBox(children=(FloatProgress(value=0.0, max=25000.0), HTML(value='')))
-
-
-    
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Shuffling and writing examples to /root/tensorflow_datasets/imdb_reviews/plain_text/1.0.0.incompleteY3WF96/imdb_reviews-unsupervised.tfrecord
-    
-
-
-    HBox(children=(FloatProgress(value=0.0, max=50000.0), HTML(value='')))
-
-
-    WARNING:absl:Dataset is using deprecated text encoder API which will be removed soon. Please use the plain_text version of the dataset and migrate to `tensorflow_text`.
-    
-
-    [1mDataset imdb_reviews downloaded and prepared to /root/tensorflow_datasets/imdb_reviews/plain_text/1.0.0. Subsequent calls will reuse this data.[0m
-    
-
-Let's examine the contents and datatypes contained in the dataset. 
-
-Each sample has a `label` and `text` field.
-
-
-```
-train_data
-```
-
-
-
-
-    <PrefetchDataset shapes: {label: (), text: ()}, types: {label: tf.int64, text: tf.string}>
-
-
+``` 
 
 Let's pull the data out of TensorFlow's icy grip, so we just have plain Python types :)
 
@@ -306,17 +189,11 @@ print('{:,} Test Samples'.format(len(test_labels)))
 print('Labels:', np.unique(train_labels))
 ```
 
-    25,000 Training Samples
-    25,000 Test Samples
-    Labels: [0 1]
-    
-
 # S3. Inspect Dataset
 
 ## 3.1. Inspect Training Samples
 
 Lets print out a handful of samples at random.
-
 
 ```
 import textwrap
@@ -358,22 +235,9 @@ for i in range(3):
     will not complain about that.. simply put it needs more nudity and better kill
     scenes cuz lets face it that is why we watch these flicks...<br /><br />I
     wouldn't waste my money on it...and if you must, wait until it's on the OLD
-    shelves at your local video store
-    
-    ==== Label: 1 ====
-    Right at this moment I am watching this movie for the second time (on
-    television) and for the second time I fell into it when it was running for an
-    hour already (I think I saw 2 minutes more this time) This movie is really
-    impressing, the way Goldsworthy looks at nature, changes nature in a way that
-    you yourself would never think of, really is amazing. This whole movie gives you
-    a warm feeling, seeing him play with the world around him with such love. Or
-    only seeing his hands, covered in dirt and with broken fingernails, it just
-    touches you.
-    
-    
+    shelves at your local video store    
 
 Let's also check out the classes and their balance.
-
 
 ```
 import matplotlib.pyplot as plt
@@ -400,14 +264,6 @@ ax.yaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:,.0f}'))
 
 plt.show()
 ```
-
-    /usr/local/lib/python3.6/dist-packages/seaborn/_decorators.py:43: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
-      FutureWarning
-    
-
-
-    
-![png](Smart_Batching_BERT_IMDb_Reviews_files/Smart_Batching_BERT_IMDb_Reviews_30_1.png)
     
 
 
@@ -433,15 +289,6 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=Tru
 print('Done')
 ```
 
-    Loading BERT tokenizer...
-    
-
-
-    HBox(children=(FloatProgress(value=0.0, description='Downloading', max=231508.0, style=ProgressStyle(descripti…
-
-
-    
-    Done
     
 
 ## 4.2. Tokenize Without Padding
@@ -499,25 +346,7 @@ for text in train_text:
     
 print('DONE.')
 print('{:>10,} samples'.format(len(full_input_ids)))
-```
-
-    Tokenizing 25,000 training samples...
-      Tokenized 0 samples.
-      Tokenized 2,000 samples.
-      Tokenized 4,000 samples.
-      Tokenized 6,000 samples.
-      Tokenized 8,000 samples.
-      Tokenized 10,000 samples.
-      Tokenized 12,000 samples.
-      Tokenized 14,000 samples.
-      Tokenized 16,000 samples.
-      Tokenized 18,000 samples.
-      Tokenized 20,000 samples.
-      Tokenized 22,000 samples.
-      Tokenized 24,000 samples.
-    DONE.
-        25,000 samples
-    
+```  
 
 ## 4.3. Sort by length
 
@@ -552,12 +381,6 @@ plt.title('Samples BEFORE Sorting')
 plt.show()
 ```
 
-
-    
-![png](Smart_Batching_BERT_IMDb_Reviews_files/Smart_Batching_BERT_IMDb_Reviews_44_0.png)
-    
-
-
 Now we'll sort the examples by length so that we can create batches with equal (or at least similar) lengths.
 
 **NOTE:** One departure I've made from Michael's code is in how I sort. Michael sorted the samples by *strength length*, whereas my code is sorting them
@@ -570,7 +393,6 @@ train_samples = sorted(zip(full_input_ids, train_labels), key=lambda x: len(x[0]
 ```
 
 `train_samples` is now a list of tuples of (input_ids, label):
-
 
 ```
 train_samples[0]
@@ -622,12 +444,6 @@ plt.title('Samples after Sorting')
 
 plt.show()
 ```
-
-
-    
-![png](Smart_Batching_BERT_IMDb_Reviews_files/Smart_Batching_BERT_IMDb_Reviews_52_0.png)
-    
-
 
 ## 4.4. Random Batch Selection
 
@@ -694,14 +510,6 @@ while len(train_samples) > 0:
 
 print('\n  DONE - {:,} batches.'.format(len(batch_ordered_sentences)))
 ```
-
-    Creating training batches of size 16
-      Selected 0 batches.
-      Selected 500 batches.
-      Selected 1,000 batches.
-      Selected 1,500 batches.
-    
-      DONE - 1,563 batches.
     
 
 ## 4.5. Add Padding
@@ -759,10 +567,7 @@ for (batch_inputs, batch_labels) in zip(batch_ordered_sentences, batch_ordered_l
   
 print('Done')
 
-```
-
-    Done
-    
+```   
 
 Now that our data is ready, we can calculate the total number of tokens in the training data after using smart batching.
 
@@ -866,10 +671,7 @@ if use_fixed_padding:
     py_attn_masks = batches_attention_masks
     py_labels = batches_labels
 print('Done')
-```
-
-    Done
-    
+```    
 
 # S5. Fine-Tune BERT
 
@@ -914,25 +716,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
 
 print('\nModel type:', str(type(model)))
 
-```
-
-
-    HBox(children=(FloatProgress(value=0.0, description='Downloading', max=440473133.0, style=ProgressStyle(descri…
-
-
-    
-    
-
-    WARNING:transformers.modeling_utils:Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
-    - This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPretraining model).
-    - This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
-    WARNING:transformers.modeling_utils:Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
-    You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
-    
-
-    
-    Model type: <class 'transformers.modeling_bert.BertForSequenceClassification'>
-    
+```  
 
 Connect to the GPU and load our model onto it.
 
@@ -952,50 +736,6 @@ desc = model.to(device)
 
 print('    DONE.')
 ```
-
-    
-    Loading model to GPU...
-    
-
-
-    ---------------------------------------------------------------------------
-
-    RuntimeError                              Traceback (most recent call last)
-
-    <ipython-input-26-bd2f7bc0df25> in <module>()
-          5 device = torch.device('cuda')
-          6 
-    ----> 7 print('  GPU:', torch.cuda.get_device_name(0))
-          8 
-          9 desc = model.to(device)
-    
-
-    /usr/local/lib/python3.6/dist-packages/torch/cuda/__init__.py in get_device_name(device)
-        273             if :attr:`device` is ``None`` (default).
-        274     """
-    --> 275     return get_device_properties(device).name
-        276 
-        277 
-    
-
-    /usr/local/lib/python3.6/dist-packages/torch/cuda/__init__.py in get_device_properties(device)
-        294 
-        295 def get_device_properties(device: _device_t) -> _CudaDeviceProperties:
-    --> 296     _lazy_init()  # will define _get_device_properties
-        297     device = _get_device_index(device, optional=True)
-        298     if device < 0 or device >= device_count():
-    
-
-    /usr/local/lib/python3.6/dist-packages/torch/cuda/__init__.py in _lazy_init()
-        170         # This function throws if there's a driver initialization error, no GPUs
-        171         # are found or any other error occurs
-    --> 172         torch._C._cuda_init()
-        173         # Some of the queued calls may reentrantly call _lazy_init();
-        174         # we need to just return without initializing in that case.
-    
-
-    RuntimeError: No CUDA GPUs are available
-
 
 ## 5.2. Optimizer & Learning Rate Scheduler
 
